@@ -1,0 +1,14 @@
+name: "Greet User (Docker Python)"
+description: "Greets the user by name using Python"
+inputs:
+  name:
+    description: 'Name of the person to greet'
+    required: true
+outputs:
+  greeting:
+    description: "The greeting message"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.name }}
